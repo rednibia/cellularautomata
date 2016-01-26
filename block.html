@@ -1,0 +1,174 @@
+<html>
+  <head>
+  
+<style> 
+
+body {
+    background-color: silver;
+}
+
+  .onoffswitch {
+	display:none;
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+</style>
+
+  <table style="width:100%">
+  <tr>
+    <td><canvas id="can1" width = 95, height = 60 style="border:1px solid #C0C0C0"; onclick="canvas1click()"></canvas></td>
+    <td><canvas id="can2" width = 95, height = 60 style="border:1px solid #C0C0C0"; onclick="canvas2click()"></canvas></td>
+    <td><canvas id="can3" width = 95, height = 60 style="border:1px solid #C0C0C0"; onclick="canvas3click()"></canvas></td>
+    <td><canvas id="can4" width = 95, height = 60 style="border:1px solid #C0C0C0"; onclick="canvas4click()"></canvas></td>
+    <td><canvas id="can5" width = 95, height = 60 style="border:1px solid #C0C0C0"; onclick="canvas5click()"></canvas></td>
+    <td><canvas id="can6" width = 95, height = 60 style="border:1px solid #C0C0C0"; onclick="canvas6click()"></canvas></td>
+    <td><canvas id="can7" width = 95, height = 60 style="border:1px solid #C0C0C0"; onclick="canvas7click()"></canvas></td>
+    <td><canvas id="can8" width = 95, height = 60 style="border:1px solid #C0C0C0"; onclick="canvas8click()"></canvas></td>
+  </tr>
+  <tr>
+    <td>
+	<div class="onoffswitch">
+		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch1" unchecked onchange = "topcanvas();">
+		<label class="onoffswitch-label" for="switch1">
+			<span class="onoffswitch-inner"></span>
+			<span class="onoffswitch-switch"></span>
+		</label>
+	</div>	
+		</td>
+    <td>
+	<div class="onoffswitch">
+		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch2" unchecked onchange = "topcanvas();">
+		<label class="onoffswitch-label" for="switch2">
+			<span class="onoffswitch-inner"></span>
+			<span class="onoffswitch-switch"></span>
+		</label>
+	</div>	
+	</td>
+    <td>
+	<div class="onoffswitch">
+		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch3" unchecked onchange = "topcanvas();">
+		<label class="onoffswitch-label" for="switch3">
+			<span class="onoffswitch-inner"></span>
+			<span class="onoffswitch-switch"></span>
+		</label>
+	</div>	
+	</td>
+    <td>
+	<div class="onoffswitch">
+		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch4" unchecked onchange = "topcanvas();">
+		<label class="onoffswitch-label" for="switch4">
+			<span class="onoffswitch-inner"></span>
+			<span class="onoffswitch-switch"></span>
+		</label>
+	</div>	
+	</td>
+    <td>
+	<div class="onoffswitch">
+		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch5" unchecked onchange = "topcanvas();">
+		<label class="onoffswitch-label" for="switch5">
+			<span class="onoffswitch-inner"></span>
+			<span class="onoffswitch-switch"></span>
+		</label>
+	</div>	
+	</td>
+    <td>
+	<div class="onoffswitch">
+		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch6" unchecked onchange = "topcanvas();">
+		<label class="onoffswitch-label" for="switch6">
+			<span class="onoffswitch-inner"></span>
+			<span class="onoffswitch-switch"></span>
+		</label>
+	</div>	
+	</td>
+    <td>
+	<div class="onoffswitch">
+		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch7" unchecked onchange = "topcanvas();">
+		<label class="onoffswitch-label" for="switch7">
+			<span class="onoffswitch-inner"></span>
+			<span class="onoffswitch-switch"></span>
+		</label>
+	</div>	
+	</td>
+    <td>
+	<div class="onoffswitch">
+		<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch8" unchecked onchange = "topcanvas();">
+		<label class="onoffswitch-label" for="switch8">
+			<span class="onoffswitch-inner"></span>
+			<span class="onoffswitch-switch"></span>
+		</label>
+	</div>
+	</td>
+	</tr>
+<tr>
+	<td>Start</td>
+	<td>Density</td>
+	<td>On</td>
+	<td>Off</td>
+	<td>Preset</td>
+	<td>Generate</td>
+</tr>
+<tr>
+	<td>
+		<select id = "start">
+		<option value="center">Center</option>
+		<option value="left">Left</option>
+		<option value="right">Right</option>
+		<option value="even">Every Other</option>
+		<option value="random">Random(50%)</option>
+		<option value="randoml">Random(25%)</option>
+		<option value="randomh">Random(75%)</option>
+		<option value="on">All on</option>
+		<option value="off">All off</option>
+		</select>
+	</td>
+	<td>
+	<input type="text" name="size" value="200" id = "boxresolution" size = "1">
+	</td>
+	<td>
+		<select id = "oncolor" onchange = "topcanvas();">
+		<option value="white">White</option>
+		<option value="black">Black</option>
+		<option value="gray">Gray</option>
+		<option value="red">Red</option>
+		<option value="blue">Blue</option>
+		<option value="green">Green</option>
+		</select>
+	</td>
+	<td>
+		<select id = "offcolor" onchange = "topcanvas();">
+		<option value="black">Black</option>
+		<option value="white">White</option>
+		<option value="gray">Gray</option>
+		<option value="red">Red</option>
+		<option value="blue">Blue</option>
+		<option value="green">Green</option>
+		</select>
+	</td>
+	<td>
+		<select id = "preset" onchange="preset();">
+		<option value=0>None</option>
+		<option value=1>Rule 30</option>
+		<option value=2>Rule 90</option>
+		<option value=3>Rule 90 - R</option>
+		<option value=4>Rule 110</option>
+		<option value=5>Rule 110 - R</option>
+		<option value=6>Rule 184 - R</option>
+		<option value=7>Rule 184 - LR</option>
+		<option value=8>Rule 184 - HR</option>
+		</select>
+	</td>
+	<td>
+	<button onclick="generate()">Click me</button>
+	</td>
+</tr>
+</table>
+
+  
+  </head>
+  <body>
+	<canvas id="blockcanvas"></canvas>  
+  </body>
+  	
+    <script src="blocksim.js"></script>
+  
+</html>
